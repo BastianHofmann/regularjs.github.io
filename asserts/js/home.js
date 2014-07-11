@@ -391,7 +391,7 @@ void function slogan(){
   }); 
   var js_editor = CodeMirror($('demo-js'), {
     value: 
-      "data: {todos: []},\nlogin: function(){\n this.data.username = prompt('input username', '')\n},\nadd: function(draft){\n var data = this.data;\n data.todos.push({content: draft});\n data.draft = '';\n},\nremove: function(todo){\n var data = this.data;\n var index = data.todos.indexOf(todo);\n if(~index) data.todos.splice(index, 1);\n}",
+      "login: function(){\n this.data.username = prompt('input username', '')\n},\nadd: function(draft){\n var data = this.data;\n data.todos.push({content: draft});\n data.draft = '';\n},\nremove: function(todo){\n var data = this.data;\n var index = data.todos.indexOf(todo);\n if(~index) data.todos.splice(index, 1);\n}",
     mode:  "javascript",
     theme: "solarized",
     extraKeys: {
@@ -402,7 +402,7 @@ void function slogan(){
     }
   });
   var js_editor_3 = CodeMirror($('demo-js-3'), {
-    value: "})\napp = new App().inject('#demo-view')",
+    value: "})\napp = new App({data: {todos: []}}).inject('#demo-view')",
     mode:  "javascript",
     theme: "solarized",
     readOnly: 'nocursor',
