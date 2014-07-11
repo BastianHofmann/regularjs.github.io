@@ -1,0 +1,22 @@
+{
+  "name": "regularjs'is offcial site",
+  "version": "1.0.0",
+  "main": "index.html",
+  "description": "regularjs = reactjs + angularjs",
+  "authors": "@leeluolee <87399126@163.com>",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "3.2.x",
+    "regularjs": "0.1.x"
+  },
+
+  "ignore": [
+    ".*",
+    "node_modules",
+    "bin",
+    "test",
+    "gulpfile.js",
+    "*.json",
+    "*.md"
+  ]
+}

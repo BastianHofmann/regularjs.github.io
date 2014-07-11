@@ -1,0 +1,152 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!doctype html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<!--[if lt IE 9 ]> 
+			<script type="text/javascript" src="uuCanvas.js"></script>
+		<![endif]-->
+        <script type="text/javascript" src="m3d-core.js"></script>
+        <script type="text/javascript" src="Shape.js"></script>
+        <style>
+            body{
+                margin:0;
+                padding:0;
+                background: #000;
+            }
+        </style>
+    </head>
+    <body>
+    <canvas id="canvas" width="600" height="600"></canvas>
+    <script type="text/javascript" >
+
+        /*
+         * 鉴于MMI 1X2 多模干涉耦合器的尺度 有尺寸要求 150um*50um 所以 初步尺寸定位 1500X800um
+         *
+         */
+        var V=m3d.Vector,M=m3d.Matrix,F=m3d.Face,Sh=m3d.Shape,Sc=m3d.Scene,Ca=m3d.Camera,L=m3d.Light,C=m3d.CRender,P=m3d.Particle;
+
+        var $=function(id){
+            return document.getElementById(id);
+        }
+        var canvas=$('canvas');
+        canvas.width=window.innerWidth-20;
+        canvas.height=window.innerHeight-20;
+        var c=new m3d.CRender({
+            canvas: canvas
+        });
+
+        c.light=new L();
+        var s1=Sh.stackCreater({
+            verticles:[
+                V.create([3,1,0]),
+                V.create([1,3,0]),
+                V.create([-1,3,0]),
+                V.create([-3,1,0]),
+                V.create([-3,-1,0]),
+                V.create([-1,-3,0]),
+                V.create([1,-3,0]),
+                V.create([3,-1,0]),
+            ]
+        },.1)
+        var s2=Sh.stackCreater({
+            verticles:[
+                V.create([3,1,0]),
+                V.create([1,3,0]),
+                V.create([-1,3,0]),
+                V.create([-3,1,0]),
+                V.create([-3,-1,0]),
+                V.create([-1,-3,0]),
+                V.create([1,-3,0]),
+                V.create([3,-1,0]),
+            ]
+        },.3)
+        s2.transform.translate(0,3,-4)
+        s1.fillColor=[255,156,232,1];
+        s2.fillColor=[112,156,232,1];
+        s2.onClick=s1.onClick=function(face,v){
+            face.fillColor=[Math.floor(255*Math.random()),Math.floor(255*Math.random()),Math.floor(255*Math.random()),1]
+            c.draw()
+        }
+        s1.transform.rotateX(.1)
+        c.step=[s1,s2]
+        c.draw()
+
+        
+
+
+
+        var i =0;
+        var j=0.4;
+        var md=false;
+        var skd=false;
+        var ex=0,ey=0;
+        var dz=-30;
+
+        var update=function(){
+            c.clear();
+            c.camera.transform.reset();
+            c.camera.transform=c.camera.transform.rotateN(j,i,0).translate(0,0,dz);
+
+            c.draw()
+
+        }
+
+        autoplay=function(){
+            setInterval(function(){
+                i+=.005;
+
+                update();
+            },33)
+        }
+        //  autoplay();
+        function registerMouseWheelListener() {
+            function handler(e) {
+                var scale=e.detail ? -e.detail : e.wheelDelta/40;
+                dz+=scale/3;
+                update(scale)
+                e.stopPropagation();
+                e.preventDefault();
+                return false;
+            }
+            document.addEventListener('DOMMouseScroll', handler, false);
+            document.addEventListener('mousewheel', handler, false);
+        }
+        registerMouseWheelListener();
+        document.addEventListener('mousedown',function(e){
+            md=true;
+            ex=e.clientX;
+            ey=e.clientY;
+
+        },false)
+        document.addEventListener('mouseup',function(e){
+            md=false;
+        },false)
+        document.addEventListener('mousemove',function(e){
+            if (md==false) return;
+            var tx=ex,ty=ey;
+            ex=e.clientX;
+            ey=e.clientY;
+
+            var dy=(ey-ty)/400;
+            i+=(ex-tx)/400;
+            if(dy>0&&j>.6||dy<0&&j<.05){}else{
+                j+=dy;
+            }
+
+            update();
+
+        },false)
+
+
+
+
+
+    </script>
+</body>
+
+</html>

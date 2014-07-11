@@ -1,0 +1,224 @@
+$include-reset=nec;
+@import 'http://nec.netease.com/download/framework/mass/mass/index.mcss';
+@import './var';
+@import './_icon';
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Montserrat-Regular'), url(http://themes.googleusercontent.com/static/fonts/montserrat/v4/zhcz-_WihjSQC0oHJ9TCYBsxEYwM7FgeyaSgU71cLG0.woff) format('woff');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Montserrat-Bold'), url(http://themes.googleusercontent.com/static/fonts/montserrat/v4/IQHow_FEYlDC4Gzy_m8fcgFhaRv2pGgT5Kf0An0s4MM.woff) format('woff');
+}
+
+
+
+body{
+  font-family:'Montserrat', "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+  z-index: 0;
+}
+
+a{
+  $state-color: $light-gray;
+}
+
+@import './_ui';
+
+.g-hd{
+  position: relative;
+  background-color: $bgcolor;
+  padding: 10px 0;
+  z-index: 0;
+}
+
+.m-nav{
+  $clearfix();
+  position: relative;
+  z-index: 2;
+  padding-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  li {
+    display: inline-block;
+    padding: 0 20px;
+    a.inner{
+      line-height: 1.6em;
+      padding: 10px 0;
+      border-bottom: 2px solid transparent;
+      $transition: border .2s ;
+      &:hover{
+        border-bottom-color: $primary;
+      }
+    }
+    .github{
+      display: inline-block;
+      border: 1px solid #fff;
+      padding: .3em 2em;
+      border-radius: 5px;
+      &:hover{
+        color: $primary;
+        border-color: $primary;
+      }
+
+    }
+    .home{
+      display: inline-block;
+      /*border-radius: 50%;*/
+      font-size: 1.8em;
+      text-indent: -2px;
+    }
+  }
+
+}
+
+
+.m-slogan{
+  z-index: 2;
+  position: relative;
+  min-height: 300px;
+  padding-top: 80px;
+  .slogan{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  h2{
+    color: #fff;
+    font-size: 3.0em;
+    line-height: 3em;
+    cursor: pointer;
+    text-shadow: 1px 1px 1px #666;
+
+    span{
+      color: l-adjust($primary, 5%);
+      display: inline-block;
+      $opacity: 1;
+    }
+    span.r-enter{
+      $transition: opacity .5s;
+      $opacity: 0;
+    }
+    span.r-enter-active{
+      $opacity: 1;
+    }
+  }
+  p{
+    color: #fff;
+    text-shadow: 1px 1px #000;
+    padding: 0 100px;
+  }
+  .btns{
+    font-size: 16px;
+    margin-top: 40px;
+    .u-btn{
+      margin-top: 10px;
+    }
+  }
+  .social{
+    text-align: center;
+    margin-top: 20px;
+  }
+}
+
+.m-start{
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  a.full{
+
+    display: block;
+    padding: 32px;
+    text-align: center;
+    font-size: 2.1em;
+    color: #666;
+    $box-shadow: inset 0px 0px 1px rgba(#333, .2);
+    $transition: background-color .8s, color .4s;
+    background-color: l-adjust($light-gray, 2%);
+    &:hover{
+      color: #fff;
+      background-color: $inverse;
+    }
+    &:active{
+      background-color: l-adjust($inverse, -5%);
+    }
+  }
+}
+
+.m-intro{
+  padding-top: 40px;
+  background-color: #fff;
+  min-height: 200px;
+  text-align: center;
+  .sec{
+    display: inline-block;
+    $box-sizing: border-box;
+    margin: 1%;
+    width: 30%;
+    vertical-align: top;
+    h3{
+      color: $bgcolor;
+      text-shadow: ;
+      font-size: 1.4em;
+      margin-bottom: 12px;
+    }
+    p{
+      font-family: "Helvetica Neue","Helvetica",Helvetica,Arial,sans-serif;
+      color: #999;
+      font-weight: normal;
+      font-size: 14px;
+    }
+  }
+
+  .more{
+    margin-top: 20px;
+    text-align: center;
+    a{
+      text-decoration: underline;
+      color: $inverse;
+    }
+  }
+}
+
+
+
+.m-footer{
+  background-color: #333;
+  font-size: 12px;
+  p{
+    color: #858585;
+    margin-bottom: 6px;
+  }
+  a{
+    &:hover{
+      color: l-adjust($primary, 5%);
+    }
+    &:active{
+      color: l-adjust($primary, -5%);
+    }
+  }
+  padding: 20px 0;
+  text-align: center;
+}
+
+canvas#canvas{
+  z-index: 1;
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+}
+
+$bounceIn();
+$bounceOut();
+
+

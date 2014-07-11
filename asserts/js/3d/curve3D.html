@@ -1,0 +1,113 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!doctype html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript" src="m3d-core.js"></script>
+        <script type="text/javascript" src="Shape.js"></script>
+        <style>
+            body{
+                margin:0;
+                padding:0;
+                background: #fff;
+            }
+        </style>
+    </head>
+    <body>
+    <canvas id="canvas" width="100%" height="100%"></canvas>
+    <script type="text/javascript" >
+
+        /*
+         * 鉴于MMI 1X2 多模干涉耦合器的尺度 有尺寸要求 150um*50um 所以 初步尺寸定位 1500X800um
+         *
+         */
+        var V=m3d.Vector,M=m3d.Matrix,F=m3d.Face,Sh=m3d.Shape,Sc=m3d.Scene,Ca=m3d.Camera,L=m3d.Light,C=m3d.CRender,P=m3d.Particle,Li=m3d.Line;
+
+        var $=function(id){
+            return document.getElementById(id);
+        }
+        var canvas=$('canvas');
+        canvas.width=window.innerWidth-20;
+        canvas.height=window.innerHeight-20;
+        var c=new m3d.CRender({
+            canvas: canvas
+        });
+
+        var l1=new Li({
+            points:[new V(),new V([0,2,0]),new V([3,2,0]),new V([3,0,0]),new V([3,-2,0]),new V([2,-3,0]),new V([0,-4,0]),new V([-2,-3,0]),new V([-3,-2,0]),new V([-3,0,0]),new V([-3,2,0])],
+            steps:[0,[1,2,3],[4,5,6],[7,8,9],[10,1,0]],
+            lineWidth:2
+        })
+        c.drawLine(l1);
+        c.ctx.fill();
+         
+
+
+        var i =0;
+        var j=0.4;
+        var md=false;
+        var skd=false;
+        var ex=0,ey=0;
+        var dz=-30;
+
+        var update=function(){
+            c.clear();
+            c.camera.transform.reset();
+            c.camera.transform=c.camera.transform.rotateN(j,i,0).translate(0,0,dz);
+            c.drawLine(l1)
+            c.ctx.fill();
+        }
+        autoplay=function(){
+            setInterval(function(){
+                M.rotate([0,1,0],.1).transforms(l1.points)
+                update();
+            },33)
+        }
+        function registerMouseWheelListener() {
+            function handler(e) {
+                var scale=e.detail ? -e.detail : e.wheelDelta/40;
+                dz+=scale/3;
+                update(scale)
+                e.stopPropagation();
+                e.preventDefault();
+                return false;
+            }
+            document.addEventListener('DOMMouseScroll', handler, false);
+            document.addEventListener('mousewheel', handler, false);
+        }
+        registerMouseWheelListener();
+        document.addEventListener('mousedown',function(e){
+            md=true;
+            ex=e.clientX;
+            ey=e.clientY;
+        },false)
+        document.addEventListener('mouseup',function(e){
+            md=false;
+        },false)
+        document.addEventListener('mousemove',function(e){
+            if (md==false) return;
+            var tx=ex,ty=ey;
+            ex=e.clientX;
+            ey=e.clientY;
+
+            var dy=(ey-ty)/400;
+            i+=(ex-tx)/400;
+
+            j+=dy;
+
+            update();
+
+        },false)
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -2,11 +2,77 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>Regularjs - Homepage</title>
+  <link rel="stylesheet" href="./asserts/css/index.css">
 </head>
 <body>
 
-  Welcome to Regularjs.
+<header class="g-hd" id='header'>
+  <canvas id='canvas'></canvas>
+
+  <div class="m-nav">
+    <ul class="nav">
+      <li><a href="/" class="home icon-home-outline inner"></a></li>
+      <li><a class='inner' href="https://www.gitbook.io/book/leeluolee/regular-guide/reviews">Guide</a></li>
+      <li><a href="/example" class='inner' >Example</a></li>
+      <li><a class='inner' href="/blog">Blog</a></li>
+      <li><a class='github' href="https://github.com/regularjs/regular">Github</a></li>
+    </ul>
+  </div>
+  <div class="m-slogan">
+    <div class="slogan">
+      <h2 id='slogan'>Regular</h2>
+      <p>simple, flexible and regular way to create reactive and nestable component </p>
+      <div class="btns">
+        <a href="#" class="u-btn u-btn-s1">Source on Github</a>
+        <a href="#" class="u-btn u-btn-s1">Download Package</a>
+      </div>
+      <div class="social">
+        <iframe src="http://ghbtns.com/github-btn.html?user=regularjs&repo=regular&type=watch&count=true"
+            allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
+        <iframe src="http://ghbtns.com/github-btn.html?user=regularjs&repo=regular&type=fork&count=true"
+            allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://regularjs.github.io/" data-text="regularjs.js:simple, flexible and regular way to create reactive and nestable component" data-related="anthonyshort" data-dnt="true">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="m-intro">
+  <div class="sec">
+    <h3>Powerful</h3>
+    <p>
+       <strong>string-based template</strong> engine providing powerful logic controller and full-supported expression</p>
+  </div>
+  <div class="sec">
+    <h3>Concise</h3>
+    <p>angular-like <strong>data-binding</strong> with dirty-check mechanism. with some advanced feature like once-binding</p>
+  </div>
+  <div class="sec">
+    <h3>Modular</h3>
+    <p>Isolation mechanism between Components and plugin System is Na supported what is needed in large Project </p>
+  </div>
+  <div class="more">
+    <a href="">Learn more About Regularjs →</a>
+  </div>
+</div>
+
+<div class="m-demo">
+</div>
+<div class="m-start">
+  <a class="full" href='https://www.gitbook.io/book/leeluolee/regular-guide'>Getting Start with Regularjs's Guide <span class="icon-reply-all"></span> </a>
+</div>
+<div class="m-intro"></div>
+<footer class="m-footer">
+  <p class="license">Release under <a href="https://github.com/regularjs/regular/blob/master/LICENSE" target="_blank">MIT License</a></p>
+  <p class="rights">Copyright&nbsp;©&nbsp;2014&nbsp;&nbsp;<a href="https://leeluolee.github.io">@leeluolee</a>. Reserved</p>
+</footer>
+
+<script src='asserts/js/3d/render.js'> </script>
+<script src='bower_components/regularjs/dist/regular.min.js'> </script>
+<script src="asserts/js/home.js"> </script>
+
+
   
 </body>
 </html>
