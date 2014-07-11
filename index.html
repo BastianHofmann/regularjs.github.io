@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <title>Regularjs - Homepage</title>
-  <link rel="stylesheet" href="./asserts/css/index.css">
+  <link rel="stylesheet" href='bower_components/codemirror/lib/codemirror.css'>
+  <link rel="stylesheet" href="./asserts/css/index.css"> 
+
 </head>
 <body>
 
@@ -24,8 +26,8 @@
       <h2 id='slogan'>Regular</h2>
       <p>simple, flexible and regular way to create reactive and nestable component </p>
       <div class="btns">
-        <a href="#" class="u-btn u-btn-s1">Source on Github</a>
-        <a href="#" class="u-btn u-btn-s1">Download Package</a>
+        <a href="https://github.com/regularjs/regular" class="u-btn u-btn-s1">Source on Github</a>
+        <a href="https://github.com/regularjs/regular/archive/master.zip" class="u-btn u-btn-s1">Download Latest</a>
       </div>
       <div class="social">
         <iframe src="http://ghbtns.com/github-btn.html?user=regularjs&repo=regular&type=watch&count=true"
@@ -40,38 +42,78 @@
 </header>
 <div class="m-intro">
   <div class="sec">
+    <img src="asserts/image/html-tag.svg" height=40 alt="" class="top">
     <h3>Powerful</h3>
     <p>
        <strong>string-based template</strong> engine providing powerful logic controller and full-supported expression</p>
   </div>
   <div class="sec">
+    <img src="asserts/image/brainstorming.svg" height=40 alt="" class="top">
     <h3>Concise</h3>
-    <p>angular-like <strong>data-binding</strong> with dirty-check mechanism. with some advanced feature like once-binding</p>
+    <p>angular-like <strong>data-binding</strong> with dirty-check mechanism. also have some advanced feature like once-binding</p>
   </div>
   <div class="sec">
+    <img src="asserts/image/layers2.svg" height=40 alt="" class="top">
     <h3>Modular</h3>
-    <p>Isolation mechanism between Components and plugin System is Na supported what is needed in large Project </p>
+    <p><strong>Isolation mechanism</strong> and plugin System is native supported what is important in large Project </p>
   </div>
   <div class="more">
     <a href="">Learn more About Regularjs →</a>
   </div>
+
+
 </div>
 
-<div class="m-demo">
-</div>
 <div class="m-start">
   <a class="full" href='https://www.gitbook.io/book/leeluolee/regular-guide'>Getting Start with Regularjs's Guide <span class="icon-reply-all"></span> </a>
 </div>
-<div class="m-intro"></div>
+<div class="m-demo">
+  <h2>OR  CHECKOUT THE DEMO</h2>
+  <div id="demo-html" data-title="html" class='demo'></div>
+  <div  data-title="javascript" class='demo demo-2'>
+    <div id="demo-js-1" class='demo_sub'></div>
+    <div id="demo-js" class=''></div>
+    <div id="demo-js-3" class='demo_sub'></div>
+    
+  </div>
+  <div class="console">
+    <a class="u-btn u-btn-block j-run" href="#">RUN</a>
+    <div id="demo-view"> </div>
+  </div>
+</div>
+
 <footer class="m-footer">
   <p class="license">Release under <a href="https://github.com/regularjs/regular/blob/master/LICENSE" target="_blank">MIT License</a></p>
   <p class="rights">Copyright&nbsp;©&nbsp;2014&nbsp;&nbsp;<a href="https://leeluolee.github.io">@leeluolee</a>. Reserved</p>
 </footer>
 
+
+<script id="example" type="text/regularjs">
+<div class="m-todo">
+{{#if !username}}
+  Custom, Please <a on-click={{this.login()}}>Login</a>
+{{#else}}
+  Wellcomme, {{username}} <a on-click={{username = ''}}>Logout</a>
+  <input on-enter={{this.add(draft)}} r-model={{draft}}/>
+  <ul class='list'>
+    <h3>you have {{todos.length}} todos </h3>
+    {{#list todos as todo}}
+      <li class={{todo.compeleted? 'compeleted': ''}}>
+        {{todo.content}} <a on-click='this.remove(todo)'>X</a> 
+      </li>
+    {{/list}}
+  </ul>
+{{/if}}
+</div>
+</script>
+
 <script src='asserts/js/3d/render.js'> </script>
 <script src='bower_components/regularjs/dist/regular.min.js'> </script>
+<script src='bower_components/codemirror/lib/codemirror.js'> </script>
+<script src='bower_components/codemirror/mode/javascript/javascript.js'> </script>
+<script src='bower_components/codemirror/mode/xml/xml.js'> </script>
+<script src="asserts/js/nes.js"> </script>
 <script src="asserts/js/home.js"> </script>
-
 
   
 </body>

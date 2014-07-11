@@ -291,10 +291,10 @@ void function(){
     canvas: $('canvas')
   })
   render.camera.focus = 6;
-  window.onresize = function(){
+  window.onresize = Regular.util.throttle(function(){
     canvas.width = render.width = canvas.offsetParent.offsetWidth;
     canvas.height = render.height = canvas.offsetParent.offsetHeight;
-  }
+  },1000)
 
 
 
@@ -302,6 +302,7 @@ void function(){
 
   var hover;
   var speed = 0;
+  var cancel;
   function update(){
     if(hover){
       speed+=.02;
@@ -309,6 +310,8 @@ void function(){
     }else{
       speed-=.03;
       if(speed < 0) speed =0;
+
+      if(speed === 0 && cancel) cancel();
     }
 
     render.clear();
@@ -321,6 +324,8 @@ void function(){
   update()
 
   $('header').addEventListener('mouseenter', function(){
+    cancel();
+    update();
     hover = true;
   })
   $('header').addEventListener('mousemove', function(e){
@@ -340,12 +345,14 @@ void function(){
 
 }()
 
-
 /**
  * regularjs 
  * @return {[type]} [description]
  */
 void function slogan(){
+  var $ = function(id){
+    return document.getElementById(id);
+  } 
   var h2 = document.getElementById('slogan');  
   var Slogan = Regular.extend({
     template: "<h2 on-mouseenter={{hover=true}} on-mouseleave={{hover=false}}>Re{{#if hover}}<span r-animate>act+An</span>{{/if}}gular</h2>"
@@ -354,6 +361,94 @@ void function slogan(){
 
   new Slogan().inject(h2, 'after');
   Regular.dom.remove(h2)
-  
+
+
+  var Demo = Regular.extend({
+    data: {}
+  })
+  var html_editor = CodeMirror($('demo-html'), {
+    value: $('example').innerHTML.trim(),
+    mode:  "xml",
+    theme: "solarized",
+    extraKeys: {
+      Tab: function(cm) {
+          var spaces = new Array(cm.getOption("indentUnit") + 1).join(" ")
+          cm.replaceSelection(spaces, "end", "+input")
+      }
+    }
+  });
+  var js_editor_1 = CodeMirror($('demo-js-1'), {
+    value: "var App = Regular.extend({\n  template:'#example', \n",
+    mode:  "javascript",
+    theme: "solarized",
+    readOnly: 'nocursor',
+    extraKeys: {
+      Tab: function(cm) {
+          var spaces = new Array(cm.getOption("indentUnit") + 1).join(" ")
+          cm.replaceSelection(spaces, "end", "+input")
+      }
+    }
+  }); 
+  var js_editor = CodeMirror($('demo-js'), {
+    value: 
+      "data: {todos: []},\nlogin: function(){\n this.data.username = prompt('input username', '')\n},\nadd: function(draft){\n var data = this.data;\n data.todos.push({content: draft});\n data.draft = '';\n},\nremove: function(todo){\n var data = this.data;\n var index = data.todos.indexOf(todo);\n if(~index) data.todos.splice(index, 1);\n}",
+    mode:  "javascript",
+    theme: "solarized",
+    extraKeys: {
+      Tab: function(cm) {
+          var spaces = new Array(cm.getOption("indentUnit") + 1).join(" ")
+          cm.replaceSelection(spaces, "end", "+input")
+      }
+    }
+  });
+  var js_editor_3 = CodeMirror($('demo-js-3'), {
+    value: "})\napp = new App().inject('#demo-view')",
+    mode:  "javascript",
+    theme: "solarized",
+    readOnly: 'nocursor',
+    extraKeys: {
+      Tab: function(cm) {
+          var spaces = new Array(cm.getOption("indentUnit") + 1).join(" ")
+          cm.replaceSelection(spaces, "end", "+input")
+      }
+    }
+  });
+
+
+  var App = Regular.extend({
+    template: "#example",
+    data: {todos: []},
+    login: function(){
+      this.data.username = prompt("please enter you username", "")
+    },
+    add: function(draft){
+      var data = this.data;
+      data.todos.push({content: draft});
+      data.draft = "";
+    },
+    remove: function(todo){
+      var data = this.data;
+      var index = data.todos.indexOf(todo);
+      if(~index) data.todos.splice(index, 1);
+    }
+  })
+
+  app = new App().inject('#demo-view')
+
+  Regular.dom.on(nes.one('.j-run'), 'click' ,function(ev){
+    ev.preventDefault();
+    runDemo();
+  })
+
+  var prefix = js_editor_1.getValue();
+  var suffix = js_editor_3.getValue();
+  function runDemo(){
+    app.destroy();
+    nes.one('#example').innerHTML = html_editor.getValue();
+    var code = [prefix, js_editor.getValue(), suffix ].join("\n")
+
+    eval(code);
+  }
+
 }()
 

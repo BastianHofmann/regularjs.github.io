@@ -26,3 +26,15 @@
 .u-btn-s1{
   width: 240px;
 }
+
+.u-btn-block{
+  display: block;
+}
+
+
+.u-link{
+  $state-color: $primary;
+}
+.u-link2{
+  $state-color: $inverse;
+}

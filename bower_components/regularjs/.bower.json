@@ -22,7 +22,6 @@
     "commit": "4940e9e64777bdfaa4b40af0f83eae9a7ec2b6de"
   },
   "_source": "git://github.com/regularjs/regular.git",
-  "_target": "~0.1.2",
-  "_originalSource": "regularjs",
-  "_direct": true
+  "_target": "0.1.x",
+  "_originalSource": "regularjs"
 }
