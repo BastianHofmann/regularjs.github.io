@@ -106,16 +106,14 @@ a{
     text-shadow: 1px 1px 1px #666;
 
     span{
+      $transition: opacity .1s 1s;
       color: l-adjust($primary, 5%);
-      display: inline-block;
-      $opacity: 1;
+      display: none;
     }
-    span.r-enter{
-      $transition: opacity .5s;
-      $opacity: 0;
-    }
-    span.r-enter-active{
-      $opacity: 1;
+    &:hover{
+      span{
+        display: inline-block;
+      }
     }
   }
   p{

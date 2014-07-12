@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Regularjs - Homepage</title>
+  <title>Regularjs - Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta name="keywords" content="template, data-binding, mvvm, component,reactive,angular,react" >
+  <meta name="description" content="regularjs - simple, flexible and regular way to create reactive and nestable component">
   <link rel="stylesheet" href='bower_components/codemirror/lib/codemirror.css'>
   <link rel="stylesheet" href="./asserts/css/index.css"> 
-
 </head>
 <body>
 
@@ -23,7 +25,7 @@
   </div>
   <div class="m-slogan">
     <div class="slogan">
-      <h2 id='slogan'>Regular</h2>
+      <h2 id='slogan'>Re<span>act + An</span>gular</h2>
       <p>simple, flexible and regular way to create reactive and nestable component </p>
       <div class="btns">
         <a href="https://github.com/regularjs/regular" class="u-btn u-btn-s1">Source on Github</a>
@@ -69,7 +71,7 @@
 </div>
 <div class="m-demo">
   <h2>OR  CHECKOUT THE DEMO</h2>
-  <div id="demo-html" data-title="html" class='demo'></div>
+  <div id="demo-html" data-title="template" class='demo'></div>
   <div  data-title="javascript" class='demo demo-2'>
     <div id="demo-js-1" class='demo_sub'></div>
     <div id="demo-js" class=''></div>
@@ -91,15 +93,15 @@
 <script id="example" type="text/regularjs">
 <div class="m-todo">
 {{#if !username}}
-  Custom, Please <a on-click={{this.login()}}>Login</a>
+  Custom, Please <a href='#' on-click={{this.login()}}>Login</a>
 {{#else}}
-  Wellcomme, {{username}} <a on-click={{username = ''}}>Logout</a>
+  Wellcomme, {{username}} <a href='javascript:;' on-click={{username = ''}}>Logout</a>
   <input on-enter={{this.add(draft)}} r-model={{draft}}/>
   <ul class='list'>
     <h3>you have {{todos.length}} todos </h3>
     {{#list todos as todo}}
       <li class={{todo.compeleted? 'compeleted': ''}}>
-        {{todo.content}} <a on-click='this.remove(todo)'>X</a> 
+        {{todo.content}} <a href='#' on-click='this.remove(todo)'>X</a> 
       </li>
     {{/list}}
   </ul>

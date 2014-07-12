@@ -166,9 +166,8 @@ a:active{color:#ecf0f1;}
 .m-slogan{z-index:2;position:relative;min-height:300px;padding-top:80px;}
 .m-slogan .slogan{width:80%;margin-left:auto;margin-right:auto;text-align:center;}
 .m-slogan h2{color:#fff;font-size:3em;line-height:3em;cursor:pointer;margin:0.6em 0;text-shadow:1px 1px 1px #666;}
-.m-slogan h2 span{color:#f3899c;display:inline-block;filter:alpha(opacity = 100);opacity:1;}
-.m-slogan h2 span.r-enter{-webkit-transition:opacity 0.5s;-moz-transition:opacity 0.5s;transition:opacity 0.5s;filter:alpha(opacity = 0);opacity:0;}
-.m-slogan h2 span.r-enter-active{filter:alpha(opacity = 100);opacity:1;}
+.m-slogan h2 span{-webkit-transition:opacity 0.1s 1s;-moz-transition:opacity 0.1s 1s;transition:opacity 0.1s 1s;color:#f3899c;display:none;}
+.m-slogan h2:hover span{display:inline-block;}
 .m-slogan p{color:#fff;text-shadow:1px 1px #000;padding:0 0.6em;}
 .m-slogan .btns{font-size:16px;margin-top:40px;}
 .m-slogan .btns .u-btn{margin-top:10px;}
