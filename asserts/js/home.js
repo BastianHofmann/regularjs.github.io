@@ -354,13 +354,6 @@ void function slogan(){
     return document.getElementById(id);
   } 
   var h2 = document.getElementById('slogan');  
-  var Slogan = Regular.extend({
-    template: "<h2 on-mouseenter={{hover=true}} on-mouseleave={{hover=false}}>Re{{#if hover}}<span r-animate>act+An</span>{{/if}}gular</h2>"
-  }) 
-
-
-  new Slogan().inject(h2, 'after');
-  Regular.dom.remove(h2)
 
 
   var Demo = Regular.extend({
