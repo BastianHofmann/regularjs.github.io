@@ -157,7 +157,7 @@ a:active{color:#ecf0f1;}
 .m-nav{*zoom:1;position:relative;z-index:2;width:80%;padding-top:20px;margin-left:auto;margin-right:auto;text-align:right;}
 .m-nav:before,.m-nav:after{display:table;content:"";line-height:0;}
 .m-nav:after{clear:both;}
-.m-nav .logo{float:left;width:100px;}
+.m-nav .logo{float:left;width:100px;margin-top:-3px;}
 .m-nav ul{float:right;}
 .m-nav li{display:inline-block;padding:0 20px;}
 .m-nav li a.inner{line-height:1.6em;padding:10px 0;border-bottom:2px solid transparent;-webkit-transition:border 0.2s;-moz-transition:border 0.2s;transition:border 0.2s;}
