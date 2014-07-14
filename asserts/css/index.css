@@ -154,15 +154,18 @@ a:active{color:#ecf0f1;}
 .u-link2:hover{color:#17a689;}
 .u-link2:active{color:#1abc9c;}
 .g-hd{position:relative;background-color:#34495e;padding:10px 0 60px;z-index:0;}
-.m-nav{*zoom:1;position:relative;z-index:2;padding-top:20px;margin-left:auto;margin-right:auto;text-align:center;}
+.m-nav{*zoom:1;position:relative;z-index:2;width:80%;padding-top:20px;margin-left:auto;margin-right:auto;text-align:right;}
 .m-nav:before,.m-nav:after{display:table;content:"";line-height:0;}
 .m-nav:after{clear:both;}
+.m-nav .logo{float:left;width:100px;}
+.m-nav ul{float:right;}
 .m-nav li{display:inline-block;padding:0 20px;}
 .m-nav li a.inner{line-height:1.6em;padding:10px 0;border-bottom:2px solid transparent;-webkit-transition:border 0.2s;-moz-transition:border 0.2s;transition:border 0.2s;}
 .m-nav li a.inner:hover{border-bottom-color:#f17288;}
 .m-nav li .github{display:inline-block;border:1px solid #fff;padding:0.3em 2em;border-radius:5px;}
 .m-nav li .github:hover{color:#f17288;border-color:#f17288;}
 .m-nav li .home{display:inline-block;font-size:1.8em;text-indent:-2px;}
+.m-nav li.home{position:relative;top:-14px;float:left;}
 .m-slogan{z-index:2;position:relative;min-height:300px;padding-top:80px;}
 .m-slogan .slogan{width:80%;margin-left:auto;margin-right:auto;text-align:center;}
 .m-slogan h2{color:#fff;font-size:3em;line-height:3em;cursor:pointer;margin:0.6em 0;text-shadow:1px 1px 1px #666;}
@@ -331,6 +334,8 @@ body{-webkit-backface-visibility:hidden;}
 @media screen and (max-width: 1024px){.m-demo .demo{margin-top:20px;float:none;width:100%;}
 .m-demo .console{margin-top:20px;}
 }
-@media screen and (max-width: 600px){.m-intro .sec{margin-bottom:30px;width:100%;padding:0 30px;}
+@media screen and (max-width: 600px){.m-nav ul,.m-nav .logo{text-align:center;float:none;width:100%;padding-left:0;}
+.m-nav li{display:block;float:none;text-align:center;margin-bottom:16px;}
+.m-intro .sec{margin-bottom:30px;width:100%;padding:0 30px;}
 .m-slogan .u-btn-s1{width:100%;}
 }
