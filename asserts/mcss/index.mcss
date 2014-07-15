@@ -104,12 +104,17 @@ a{
   z-index: 2;
   position: relative;
   min-height: 300px;
-  padding-top: 80px;
+  padding-top: 60px;
   .slogan{
     width: 80%;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    p{
+      color: #fff;
+      text-shadow: 1px 1px #000;
+      padding: 0 .6em;
+    }
   }
   h2{
     color: #fff;
@@ -130,16 +135,26 @@ a{
       }
     }
   }
-  p{
-    color: #fff;
-    text-shadow: 1px 1px #000;
-    padding: 0 .6em;
+  .img{
+    margin-top: 1em;
+    p{
+      margin-bottom: 4px;
+      font-size: 12px;
+      text-shadow:none;
+      color: $light-gray;
+    }
+    img{
+      width: 120px;
+    }
   }
   .btns{
     font-size: 16px;
     margin-top: 40px;
     .u-btn{
       margin-top: 10px;
+      &:first-child{
+        margin-right: 20px;
+      }
     }
   }
   .social{
@@ -428,6 +443,10 @@ $bounceOut();
     }
   }
   .m-slogan{
+    padding-top: 40px;
+    h2{
+      line-height: 2em;
+    }
     .u-btn-s1{
       width: 100%;
     }

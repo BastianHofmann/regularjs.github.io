@@ -32,6 +32,13 @@
         <a href="https://github.com/regularjs/regular" class="u-btn u-btn-s1">Source on Github</a>
         <a href="https://github.com/regularjs/regular/archive/master.zip" class="u-btn u-btn-s1">Download Latest</a>
       </div>
+      <div class="img">
+        <p>BUILT BY</p>
+        <a href="https://github.com/NetEase">
+          <img src="asserts/image/fedlogo.png" alt="NetEaseWD">  
+        </a>
+        
+      </div>
       <div class="social">
         <iframe src="http://ghbtns.com/github-btn.html?user=regularjs&repo=regular&type=watch&count=true"
             allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
@@ -94,9 +101,9 @@
 <script id="example" type="text/regularjs">
 <div class="m-todo">
 {{#if !username}}
-  Custom, Please <a href='#' on-click={{this.login()}}>Login</a>
+  Customer, Please <a href='#' on-click={{this.login()}}>Login</a>
 {{#else}}
-  Wellcomme, {{username}} <a href='javascript:;' on-click={{username = ''}}>Logout</a>
+  Wellcome, {{username}} <a href='javascript:;' on-click={{username = ''}}>Logout</a>
   <input on-enter={{this.add(draft)}} r-model={{draft}}/>
   <ul class='list'>
     <h3>you have {{todos.length}} todos </h3>
