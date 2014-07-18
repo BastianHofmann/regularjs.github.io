@@ -4,6 +4,7 @@
   $border-radius: 4px;
   top:0px;
   position: relative;
+  color: #fff;
 
   background-color: $inverse;
     text-shadow: 1px 1px #333;

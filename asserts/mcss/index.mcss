@@ -30,8 +30,9 @@ code{
   font-family: Menlo, Monaco, Consolas, Ubuntu Mono, "Courier New",monospace;
 }
 
+
 a{
-  $state-color: $light-gray;
+  $state-color: $gray;
   text-decoration: none;
 }
 
@@ -40,22 +41,65 @@ a{
 .g-hd{
   position: relative;
   background-color: $bgcolor;
-  padding: 10px 0 60px;
+  padding: 10px 5% 60px;
   z-index: 0;
 }
+
+.g-top{
+  padding: 0 5%;
+  $box-shadow: 0px 1px 1px #eee;
+}
+
+
+.g-bd{
+  width: 90%;
+  max-width: 1120px;
+  margin-left: auto;
+  margin-right: auto;
+  &-example{
+    padding-top: 40px;
+  }
+}
+
+.g-sd{
+  width: 180px;
+  float: left;
+}
+
+.g-mn{
+  padding-left: 18px;
+  overflow: hidden;
+}
+
+.m-menu{
+  padding: 0;
+  list-style: none;
+  a{
+    display: block;
+    padding: 10px;
+    $box-sizing: border-box;
+    &.active{
+      border-left: 3px solid $primary;
+      background-color: #f1f1f1;
+    }
+    &:hover{
+      border-left: 3px solid l-adjust($primary, 10%);
+      background-color: #fafafa;
+    }
+  }
+}
+
 
 .m-nav{
   $clearfix();
   position: relative;
   z-index: 2;
-  width: 80%;
   padding-top: 20px;
   margin-left: auto;
   margin-right: auto;
   text-align: right;
   .logo{
     float: left;
-    width: 100px;
     margin-top: -3px;
   }
   ul{
@@ -64,6 +108,10 @@ a{
   li {
     display: inline-block;
     padding: 0 20px;
+    a{
+
+      $state-color: $light-gray;
+    }
     a.inner{
       line-height: 1.6em;
       padding: 10px 0;
@@ -99,6 +147,17 @@ a{
 
 }
 
+.m-nav-2{
+  width: 100%;
+  padding-bottom: 10px;
+  li a{
+    $state-color: $gray;
+    &.github{
+      border-color: $gray;
+    }
+  }
+
+}
 
 .m-slogan{
   z-index: 2;
@@ -106,7 +165,6 @@ a{
   min-height: 300px;
   padding-top: 60px;
   .slogan{
-    width: 80%;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -321,15 +379,21 @@ a{
 }
 
 .m-intro{
-  padding: 80px 0 80px;
+  padding: 40px 0 80px;
   background-color: #fff;
   min-height: 200px;
-
   text-align: center;
+
+  h2{
+    font-size: 2.0em;
+  }
+  em{
+    color: #999;
+  }
   .sec{
+    margin: 2em  1%;
     display: inline-block;
     $box-sizing: border-box;
-    margin: 1%;
     width: 30%;
     vertical-align: top;
     img.top{
@@ -375,6 +439,7 @@ a{
   margin-top: 100px;
   background-color: #2C3E50;
   font-size: 12px;
+  box-shadow: inset 0px 2px 3px rgba(#000, .3);
   p{
     color: #858585;
     margin-bottom: 6px;
@@ -406,6 +471,13 @@ $bounceOut();
 
 @import './_syntax';
 
+@media screen and (min-width: 1400px){
+  .g-bd{
+    max-width: 1200px;
+  }
+}
+
+
 @media screen and (max-width: 1024px){
   .m-demo{ 
     .demo{
@@ -418,6 +490,28 @@ $bounceOut();
       margin-top: 20px;
     }
   }
+
+  .g-sd{
+    width: 100%;
+    float: none;
+  }
+
+  .g-mn{
+    padding-left: 0px;
+  }
+
+  .m-menu{
+    text-align: left;
+    li{
+      display: inline-block;
+    }
+    a.active, a:hover{
+      background: #fff;
+      border-bottom: 2px solid $primary;
+      border-left: none;
+    }
+  }
+
 }
 
 @media screen and (max-width: 600px){
@@ -449,6 +543,12 @@ $bounceOut();
     }
     .u-btn-s1{
       width: 100%;
+    }
+  }
+  .m-menu{
+    text-align: left;
+    li{
+      display: block;
     }
   }
 }

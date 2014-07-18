@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -6,24 +7,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
   <meta name="keywords" content="template, data-binding, mvvm, component,reactive,angular,react" >
   <meta name="description" content="regularjs - simple, flexible and regular way to create reactive and nestable component">
-  <link rel="stylesheet" href='bower_components/codemirror/lib/codemirror.css'>
-  <link rel="shortcut icon" href="icon.png" >
-  <link rel="stylesheet" href="./asserts/css/index.css"> 
+  <link rel="stylesheet" href='/bower_components/codemirror/lib/codemirror.css'>
+  <link rel="shortcut icon" href="/icon.png" >
+  <link rel="stylesheet" href="/asserts/css/index.css"> 
 </head>
 <body>
 
-<header class="g-hd" id='header'>
-  <canvas id='canvas'></canvas>
 
+<header class="g-hd" id='header'>
   <div class="m-nav">
     <div class="logo"><a href="/" class="inner"><img src="asserts/image/regular-icon.png" alt="" with=50 height=50></a></div>
     <ul class="nav">
-      <li><a class='inner' href="https://www.gitbook.io/book/leeluolee/regular-guide/reviews">Guide</a></li>
+      <li><a class='inner' href="http://leeluolee.gitbooks.io/regular-guide/">Guide</a></li>
       <!--<li><a href="/example" class='inner' >Example</a></li>-->
-      <li><a class='inner' href="http://leeluolee.github.io/">Blog</a></li>
+      <li><a class='inner' href="/examples/markdown.html">Example</a></li>
       <li><a class='github' href="https://github.com/regularjs/regular">Github</a></li>
     </ul>
   </div>
+  <canvas id='canvas'></canvas>
   <div class="m-slogan">
     <div class="slogan">
       <h2 id='slogan'>Re<span>act + An</span>gular</h2>
@@ -50,7 +51,10 @@
     </div>
   </div>
 </header>
+<div class="g-bd">
 <div class="m-intro">
+  <h2> Using mvvm pattern in component development</h2>
+  <p><em> you will enjoy it just like you enjoy angularjs :)</em></p>
   <div class="sec">
     <img src="asserts/image/html-tag.svg" height=40 alt="" class="top">
     <h3>Powerful</h3>
@@ -70,8 +74,7 @@
   <div class="more">
     <a href="">Learn more About Regularjs →</a>
   </div>
-
-
+</div>
 </div>
 
 <div class="m-start">
@@ -92,12 +95,6 @@
   </div>
 </div>
 
-<footer class="m-footer">
-  <p class="license">Release under <a href="https://github.com/regularjs/regular/blob/master/LICENSE" target="_blank">MIT License</a></p>
-  <p class="rights">Copyright&nbsp;©&nbsp;2014&nbsp;&nbsp;<a href="https://leeluolee.github.io">@leeluolee</a>. Reserved</p>
-</footer>
-
-
 <script id="example" type="text/regularjs">
 <div class="m-todo">
 {{#if !username}}
@@ -117,14 +114,21 @@
 </div>
 </script>
 
+
+
+<footer class="m-footer">
+  <p class="license">Release under <a href="https://github.com/regularjs/regular/blob/master/LICENSE" target="_blank">MIT License</a></p>
+  <p class="rights">Copyright&nbsp;©&nbsp;2014&nbsp;&nbsp;<a href="https://leeluolee.github.io">@leeluolee</a>. Reserved</p>
+</footer>
+
+<script src='/bower_components/regularjs/dist/regular.min.js'> </script>
+<script src="/asserts/js/nes.js"> </script>
+
 <script src='asserts/js/3d/render.js'> </script>
-<script src='bower_components/regularjs/dist/regular.min.js'> </script>
 <script src='bower_components/codemirror/lib/codemirror.js'> </script>
 <script src='bower_components/codemirror/mode/javascript/javascript.js'> </script>
 <script src='bower_components/codemirror/mode/xml/xml.js'> </script>
-<script src="asserts/js/nes.js"> </script>
 <script src="asserts/js/home.js"> </script>
-
   
-</body>
+  </body>
 </html>
