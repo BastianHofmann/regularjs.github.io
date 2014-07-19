@@ -22,6 +22,8 @@ function gulp_example(file, encoding, callback){
       path: path.join(__dirname, "..", "examples", name+".html"),
       contents: new Buffer(
         ejs.render(template, {
+          current: name,
+          names: folders,
           cache: false,
           content: marked(content),
           filename: path.join(__dirname,"..", "template/common/"+name+".ejs")

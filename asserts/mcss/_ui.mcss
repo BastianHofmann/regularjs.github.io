@@ -14,7 +14,7 @@
   &:active{
     top: 1px;
     background-color: l-adjust($inverse, 3%);
-    $box-shadow: inset 1px 1px 0px rgba(#000, 60%), inset 0px 1px 0px rgba(#000, 50%);
+    $box-shadow: inset 1px 1px 0px rgba(#000, 30%), inset 0px 1px 0px rgba(#000, 20%);
   }
 
   display: inline-block;
@@ -26,6 +26,16 @@
 
 .u-btn-s1{
   width: 220px;
+
+}
+
+.u-btn-gray{
+  background-color: $bgcolor;
+  color: #fff;
+  text-shadow: none;
+  &:hover{
+    background-color: l-adjust($bgcolor, -5%);
+  }
 }
 
 .u-btn-block{

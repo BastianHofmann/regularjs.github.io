@@ -27,7 +27,7 @@ gulp.task('build', function(){
     .on('error', gutil.log)
     .pipe(gulp.dest('./'));
 
-  gulp.src('./template/example.ejs')
+  gulp.src('./template/common/example.ejs')
     .pipe(example)
     .on('error', gutil.log)
       .pipe(gulp.dest('./'));

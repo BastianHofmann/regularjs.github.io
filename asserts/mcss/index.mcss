@@ -52,6 +52,7 @@ a{
 
 
 .g-bd{
+  $clearfix();
   width: 90%;
   max-width: 1120px;
   margin-left: auto;
@@ -69,6 +70,29 @@ a{
 .g-mn{
   padding-left: 18px;
   overflow: hidden;
+}
+
+.m-refer{
+  h2{
+    font-size: 2em;
+    color: #666;
+  }
+  p{
+    color: #777;
+    margin-bottom: 2em;
+  }
+  .icon{
+    color: mix($error, #ddd, 70%);
+  }
+  .u-btn{
+    margin-top: 12px;
+  }
+  margin: 100px 30px ;
+  min-height: 320px;
+  border: 1px solid #aaa;
+  background-color: #ddd;
+  text-align: center;
+  padding: 6em 5%;
 }
 
 .m-menu{
@@ -109,7 +133,6 @@ a{
     display: inline-block;
     padding: 0 20px;
     a{
-
       $state-color: $light-gray;
     }
     a.inner{
@@ -117,7 +140,7 @@ a{
       padding: 10px 0;
       border-bottom: 2px solid transparent;
       $transition: border .2s ;
-      &:hover{
+      &:hover, &.active{
         border-bottom-color: $primary;
       }
     }
@@ -126,7 +149,7 @@ a{
       border: 1px solid #fff;
       padding: .3em 2em;
       border-radius: 5px;
-      &:hover{
+      &:hover, &.active{
         color: $primary;
         border-color: $primary;
       }
@@ -385,10 +408,12 @@ a{
   text-align: center;
 
   h2{
-    font-size: 2.0em;
+    font-size: 2.8em;
+    margin-bottom: .3em;
   }
   em{
     color: #999;
+    font-style: normal;
   }
   .sec{
     margin: 2em  1%;
@@ -427,16 +452,49 @@ a{
   }
 }
 
-.u-quote{
+/*.u-quote{
   margin-top: 20px;
   font-size: 1.4em;
   color: $gray;
 }
+*/
 
+.m-extenal{
+  margin-top: 6em;
+  $clearfix();
+  padding: 10em 5%;
+  background-color: #ddd;
+  border-bottom: 1px solid #aaa;
+  border-top: 1px solid #aaa;
+
+  h2{
+    font-size: 2.4em;
+  }
+  .codepen{
+    width: 30%;
+    float: left;
+    text-align: center;
+  }
+  .intro{
+    overflow: hidden;
+    text-align: left;
+    padding-left: 4em;
+  }
+  .logo {
+    display: inline-block;
+    $size: 120px;
+    margin-bottom: 12px;
+  }
+  .outer-ring {
+    fill: $bgcolor;
+  }
+  .inner-box {
+    fill: $bgcolor;
+  }
+}
 
 
 .m-footer{
-  margin-top: 100px;
   background-color: #2C3E50;
   font-size: 12px;
   box-shadow: inset 0px 2px 3px rgba(#000, .3);
@@ -504,6 +562,9 @@ $bounceOut();
     text-align: left;
     li{
       display: inline-block;
+      width: 14%;
+      text-align: center;
+
     }
     a.active, a:hover{
       background: #fff;
@@ -546,9 +607,20 @@ $bounceOut();
     }
   }
   .m-menu{
-    text-align: left;
+    text-align: center;
     li{
       display: block;
+      width: 100%;
+    }
+  }
+  .m-extenal{
+    .codepen{
+      float: none;
+      width: 100%;
+    }
+    .intro{
+      display: none;
+      padding-left: 0px;
     }
   }
 }
