@@ -410,6 +410,7 @@ a{
 
   h2{
     font-size: 2.8em;
+    color: #444;
     margin-bottom: .3em;
   }
   em{
@@ -427,8 +428,7 @@ a{
     }
 
     h3{
-      color: $bgcolor;
-      text-shadow: ;
+      color: #666;
       font-size: 1.4em;
       margin-bottom: 16px;
     }

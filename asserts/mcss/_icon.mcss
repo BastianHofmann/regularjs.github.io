@@ -119,90 +119,179 @@
 .icon-home-outline:before { content: '\e842'; } /* '' */
 .icon-home:before { content: '\e843'; } /* '' */
 
-
-
-/*
-   Animation example, for spinners
-*/
-.animate-spin {
-  -moz-animation: spin 2s infinite linear;
-  -o-animation: spin 2s infinite linear;
-  -webkit-animation: spin 2s infinite linear;
-  animation: spin 2s infinite linear;
-  display: inline-block;
+@font-face {
+  font-family: 'icomoon';
+  src:url('fonts/icomoon.eot?tbyzva');
+  src:url('fonts/icomoon.eot?#iefixtbyzva') format('embedded-opentype'),
+    url('fonts/icomoon.woff?tbyzva') format('woff'),
+    url('fonts/icomoon.ttf?tbyzva') format('truetype'),
+    url('fonts/icomoon.svg?tbyzva#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
-@-moz-keyframes spin {
-  0% {
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
 
-  100% {
-    -moz-transform: rotate(359deg);
-    -o-transform: rotate(359deg);
-    -webkit-transform: rotate(359deg);
-    transform: rotate(359deg);
-  }
-}
-@-webkit-keyframes spin {
-  0% {
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
+[class^="icn-"], [class*=" icn-"] {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
 
-  100% {
-    -moz-transform: rotate(359deg);
-    -o-transform: rotate(359deg);
-    -webkit-transform: rotate(359deg);
-    transform: rotate(359deg);
-  }
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-@-o-keyframes spin {
-  0% {
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
 
-  100% {
-    -moz-transform: rotate(359deg);
-    -o-transform: rotate(359deg);
-    -webkit-transform: rotate(359deg);
-    transform: rotate(359deg);
-  }
+.icn-heart:before {
+  content: "\e600";
 }
-@-ms-keyframes spin {
-  0% {
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
+.icn-cloud:before {
+  content: "\e601";
+}
+.icn-star:before {
+  content: "\e602";
+}
+.icn-tv:before {
+  content: "\e603";
+}
+.icn-sound:before {
+  content: "\e604";
+}
+.icn-video:before {
+  content: "\e605";
+}
+.icn-trash:before {
+  content: "\e606";
+}
+.icn-user:before {
+  content: "\e607";
+}
+.icn-key:before {
+  content: "\e608";
+}
+.icn-search:before {
+  content: "\e609";
+}
+.icn-settings:before {
+  content: "\e60a";
+}
+.icn-camera:before {
+  content: "\e60b";
+}
+.icn-tag:before {
+  content: "\e60c";
+}
+.icn-lock:before {
+  content: "\e60d";
+}
+.icn-bulb:before {
+  content: "\e60e";
+}
+.icn-pen:before {
+  content: "\e60f";
+}
+.icn-diamond:before {
+  content: "\e610";
+}
+.icn-display:before {
+  content: "\e611";
+}
+.icn-location:before {
+  content: "\e612";
+}
+.icn-eye:before {
+  content: "\e613";
+}
+.icn-bubble:before {
+  content: "\e614";
+}
+.icn-stack:before {
+  content: "\e615";
+}
+.icn-cup:before {
+  content: "\e616";
+}
+.icn-phone:before {
+  content: "\e617";
+}
+.icn-news:before {
+  content: "\e618";
+}
+.icn-mail:before {
+  content: "\e619";
+}
+.icn-like:before {
+  content: "\e61a";
+}
+.icn-photo:before {
+  content: "\e61b";
+}
+.icn-note:before {
+  content: "\e61c";
+}
+.icn-clock:before {
+  content: "\e61d";
+}
+.icn-paperplane:before {
+  content: "\e61e";
+}
+.icn-params:before {
+  content: "\e61f";
+}
+.icn-banknote:before {
+  content: "\e620";
+}
+.icn-data:before {
+  content: "\e621";
+}
+.icn-music:before {
+  content: "\e622";
+}
+.icn-megaphone:before {
+  content: "\e623";
+}
+.icn-study:before {
+  content: "\e624";
+}
+.icn-lab:before {
+  content: "\e625";
+}
+.icn-food:before {
+  content: "\e626";
+}
+.icn-t-shirt:before {
+  content: "\e627";
+}
+.icn-fire:before {
+  content: "\e628";
+}
+.icn-clip:before {
+  content: "\e629";
+}
+.icn-shop:before {
+  content: "\e62a";
+}
+.icn-calendar:before {
+  content: "\e62b";
+}
+.icn-wallet:before {
+  content: "\e62c";
+}
+.icn-vynil:before {
+  content: "\e62d";
+}
+.icn-truck:before {
+  content: "\e62e";
+}
+.icn-world:before {
+  content: "\e62f";
+}
 
-  100% {
-    -moz-transform: rotate(359deg);
-    -o-transform: rotate(359deg);
-    -webkit-transform: rotate(359deg);
-    transform: rotate(359deg);
-  }
-}
-@keyframes spin {
-  0% {
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
 
-  100% {
-    -moz-transform: rotate(359deg);
-    -o-transform: rotate(359deg);
-    -webkit-transform: rotate(359deg);
-    transform: rotate(359deg);
-  }
+.m-intro .icn{
+  font-size: 64px;
+  color: #666;
 }
+

@@ -1,7 +1,7 @@
 # About  Performance 
 
 
-Perhaps some people will worry about that regularjs is probably inefficient because it is string-based template. 
+Perhaps some people will worry about that regularjs is probably inefficient.
 
 For that, we decide to introduce the test forked from [vuejs.org](vuejs.org), you will also find regularjs do fairly well on those test. Although regularjs is not designed to become the framework with best performance the plan of optimization  is also in our todolist now, we will do large work to make it competitive with other framework.
 
