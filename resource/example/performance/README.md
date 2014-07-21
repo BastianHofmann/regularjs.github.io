@@ -8,9 +8,9 @@ For that, we decide to introduce the test forked from [vuejs.org](vuejs.org), yo
 Finaly, just like Evan You Saying on [this pape](http://vuejs.org/perf/index.html)
 >  The results here are merely for technical reference and do not reflect the user experience in real products.
 
-Moreover, those tests actually is a little unfair because the focus of each frameworks is obviously different. for example, vuejs choose the batch solution to get the awesome performance, but meanwhile  developer should take the risk on the possible non-synchronized data. Angularjs may looks slowly in this test, but it is the most robust one and have much feature that others is not supported. 
+Moreover, those tests actually is a little unfair because the focus of each frameworks is obviously different. for example,  angularjs may looks slowly in this test, but it is the most robust one and have much feature that others is not supported. 
 
-__So please take easy to read the following test__
+__so please take easy to read the following test__
 
 ## Animation Performance
 
@@ -62,7 +62,7 @@ __Firefox 28__
 ```
 
 
-__Vuejs is, without doubt, the winner among these framework__.
+__without doubt, the framework that use async batch-update is efficient, e.g. vuejs, om(based on react) __.
 
 
 
