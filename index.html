@@ -103,7 +103,7 @@
 {{#if !username}}
   Customer, Please <a href='#' on-click={{this.login()}}>Login</a>
 {{#else}}
-  Wellcome, {{username}} <a href='javascript:;' on-click={{username = ''}}>Logout</a>
+  Welcome, {{username}} <a href='javascript:;' on-click={{username = ''}}>Logout</a>
   <input on-enter={{this.add(draft)}} r-model={{draft}}/>
   <ul class='list'>
     <h3>you have {{todos.length}} todos </h3>
